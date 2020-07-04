@@ -19,6 +19,8 @@ The `PLUGINNAM` don't have to be its actual name, its just a identifier as long 
 
 It takes any string that start with `help` that can branch to other descriptions.
 
+Help file should located in `Monster Hunter World\nativePC\plugins\ConsoleHelp`  and naming with `PLUGINNAMEHelp.json`
+
 
 
 Here is an example plugin help named `autofarmHelp.json` from my [Auto Fertilizer Plugin](https://www.nexusmods.com/monsterhunterworld/mods/3626)
