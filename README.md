@@ -5,6 +5,43 @@ Client file to include to interact with console.
 
 
 
+## I/O
+
+The console takes what ever you input in MHW:I's chat bar that start with char '/'.
+
+Following the order of `/PLUGINNAME COMMANDS` the plugin broadcast `PLUGINNAME COMMANDS` as string to any plugin that connected with.
+
+The `PLUGINNAM` don't have to be its actual name, its just a identifier as long as your plugin command don't conflict with others.
+
+
+
+`/PLUGINNAME help ` is a reserved command for plugin read the description file of the plugin.
+
+It takes any string that start with `help` that can branch to other descriptions.
+
+
+
+Here is an example plugin help named `autofarmHelp.json` from my [Auto Fertilizer Plugin](https://www.nexusmods.com/monsterhunterworld/mods/3626)
+
+```json
+{
+   "help":[
+      "usage: /autofarm [option]\nOption list:",
+      "harvest   : harvest now\nfertilize   : add soft soil now",
+      "remain    : display fert remaining times\nreload    : reload the plugin to refresh address and config"
+   ],
+   "helpcn":[
+      "使用方式: /restock [选项]\n选项列表:",
+      "harvest   : 立即收获\nfertilize   : 立即添加软土",
+      "remain    : 显示剩余肥料\nreload    : 重新加载插件"
+   ]
+}
+```
+
+
+
+## Usage
+
 ```c++
 #include "mhw_console.h"
 ```
