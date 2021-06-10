@@ -36,7 +36,7 @@ bool TCPConnect()
 	int wsOk = WSAStartup(ver, &wsadata);
 	if (wsOk != 0)
 	{
-		LOG(INFO) << "[PLUGINNAME] [Console] Can't Initialize winsock!";
+		LOG(INFO) << "[Template] [Console] Can't Initialize winsock!";
 		return false;
 	}
 
@@ -47,13 +47,13 @@ bool TCPConnect()
 	target.sin_addr.s_addr = inet_addr(addr);
 	//target.sin_addr.s_addr = INADDR_ANY;
 
-	LOG(INFO) << "[PLUGINNAME] [Console] Create the socket";
+	LOG(INFO) << "[Template] [Console] Create the socket";
 
 	//Create the socket
 	s = socket(AF_INET, SOCK_STREAM, 0);
 	if (s == INVALID_SOCKET)
 	{
-		LOG(INFO) << "[PLUGINNAME] [Console] INVALID_SOCKET";
+		LOG(INFO) << "[Template] [Console] INVALID_SOCKET";
 		return false;
 	}
 
@@ -62,7 +62,7 @@ bool TCPConnect()
 	if (new_sd == SOCKET_ERROR)
 	{
 		//Failed to connect
-		LOG(INFO) << "[PLUGINNAME] [Console] Failed";
+		LOG(INFO) << "[Template] [Console] Failed";
 		return false;
 	}
 
@@ -70,11 +70,11 @@ bool TCPConnect()
 	int iResult = ioctlsocket(s, FIONBIO, &iMode);
 	if (iResult != NOERROR)
 	{
-		LOG(INFO) << "[PLUGINNAME] [Console] ioctlsocket fail";
+		LOG(INFO) << "[Template] [Console] ioctlsocket fail";
 		return false;
 	}
 
-	LOG(INFO) << "[PLUGINNAME] [Console] Success";
+	LOG(INFO) << "[Template] [Console] Success";
 
 	fd_set master;
 	FD_ZERO(&master);
