@@ -9,13 +9,13 @@ Client file to include to interact with console.
 
 The console takes what ever you input in MHW:I's chat bar that start with char '/'.
 
-Following the order of `/PLUGINNAME COMMANDS` the plugin broadcast `PLUGINNAME COMMANDS` as string to any plugin that connected with.
+Following the order of `/PLUGIN_KEY COMMANDS` the plugin broadcast `PLUGIN_KEY COMMANDS` as string to any plugin that connected with.
 
 The `PLUGINNAM` don't have to be its actual name, its just a identifier as long as your plugin command don't conflict with others.
 
 
 
-`/PLUGINNAME help ` is a reserved command for plugin read the description file of the plugin.
+`/PLUGIN_KEY help ` is a reserved command for plugin read the description file of the plugin.
 
 It takes any string that start with `help` that can branch to other descriptions.
 
@@ -50,6 +50,8 @@ Here is an example plugin help named `autofarmHelp.json` from my [Auto Fertilize
 
 Depends on your code, you may need to modify the `.h` or `.cpp` to eliminate error.
 
+You may also need to edit the `PLUGIN_NAME` ,`PLUGIN_KEY` parameter, the template file name and helper filename for your own plugin.
+
 
 
 Console using TCP socket in localhost, with port number of 50382 (you known what it means :D).
@@ -83,6 +85,16 @@ LognSend: Log (the message into loader's log) and Send (the message to console t
 ```c++
 void LognSend(std::string str);
 ```
+
+## Template
+
+Attached a sample code for the core cpp
+
+With example functions of
+	- Load the config file
+	- Turn on/off the plugin
+	- Reload the plugin
+	- Stage check (such for offset pointers that only valid after entering a scene)
 
 
 

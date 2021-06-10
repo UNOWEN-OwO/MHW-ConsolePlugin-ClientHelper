@@ -17,6 +17,7 @@ nlohmann::json ConfigFile;
 
 // You need also change the name in mhw_console.cpp
 const std::string PLUGIN_NAME = "Template";
+const std::string PLUGIN_KEY = "temp";
 
 uintptr_t moduleBase;
 uintptr_t mhwPreStage;
@@ -74,7 +75,7 @@ void CheckPointers()
 	// Scan your pointer
 }
 
-void " + PLUGIN_NAME + "Memory()
+void TemplateMemory()
 {
 	LOG(INFO) <<"[" << PLUGIN_NAME << "] Waiting for you to enter a stage...";
 
@@ -111,7 +112,7 @@ void " + PLUGIN_NAME + "Memory()
 		// "temp" is the keyword when typing in chat bar
 		//   it also should be the name of the helper file in \Monster Hunter World\nativePC\plugins\ConsoleHelp
 		//   as for this "tempHelp.json"
-		if (strncmp(buffer, "temp ", 4) == 0 && strlen(buffer) >= 5)
+		if (strncmp(buffer, PLUGIN_KEY + " ", strlen(PLUGIN_KEY)) == 0 && strlen(buffer) >= strlen(PLUGIN_KEY)+1)
 		{
 			char* pch;
 			pch = strtok(buffer, " ");
